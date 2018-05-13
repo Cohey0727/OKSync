@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<AnchorPane stylesheets="@../css/application.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainController">
+   <children>
+      <AnchorPane fx:id="titleBar" prefHeight="0.0" visible="false" AnchorPane.topAnchor="0.0">
+         <children>
+          <MenuBar prefHeight="27.0" visible="false">
+            <menus>
+              <Menu mnemonicParsing="false" styleClass="menu" text="File">
+                <items>
+                  <MenuItem fx:id="importButton" mnemonicParsing="false" text="Import" />
+                        <MenuItem fx:id="openButton" mnemonicParsing="false" text="Open" />
+                        <MenuItem fx:id="saveButton" mnemonicParsing="false" text="Save" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="preferenceButton" mnemonicParsing="false" text="Preference" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="closeButton" mnemonicParsing="false" text="Close" />
+                </items>
+              </Menu>
+              <Menu mnemonicParsing="false" styleClass="menu" text="Edit">
+                <items>
+                        <CheckMenuItem fx:id="displayEmptyTable" mnemonicParsing="false" selected="true" text="Display Empty Table" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="executeSqlButton" mnemonicParsing="false" text="Execute SQL" />
+                  <MenuItem fx:id="addAndEqualButton" mnemonicParsing="false" text="Add WHERE... AND ? = ''" />
+                        <MenuItem fx:id="addOrEqualButton" mnemonicParsing="false" text="Add WHERE... OR ? = ''" />
+                        <MenuItem fx:id="addAndLikeButton" mnemonicParsing="false" text="Add WHERE... AND ? LIKE '%%'" />
+                        <MenuItem fx:id="addOrLikeButton" mnemonicParsing="false" text="Add WHERE... OR ? LIKE '%%'" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="synchronizeButton" mnemonicParsing="false" text="Sync" />
+                        <MenuItem fx:id="copyButton" mnemonicParsing="false" text="Copy" visible="false" />
+                        <MenuItem fx:id="tabCloseButton" mnemonicParsing="false" text="Close" visible="false" />
+                </items>
+              </Menu>
+              <Menu mnemonicParsing="false" styleClass="menu" text="Help">
+                <items>
+                  <MenuItem fx:id="aboutMeMenu" mnemonicParsing="false" text="About OKSync" />
+                        <MenuItem fx:id="rightAlignButton" mnemonicParsing="false" visible="false" />
+                        <MenuItem fx:id="leftAlignButton" mnemonicParsing="false" visible="false" />
+                </items>
+              </Menu>
+            </menus>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+          </MenuBar>
+         </children>
+      </AnchorPane>
+      <AnchorPane id="side-bar" maxWidth="64.0" minWidth="64.0" prefWidth="64.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+    <SplitPane dividerPositions="0.24" focusTraversable="true" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <items>
+        <AnchorPane maxWidth="420.0" prefWidth="267.0">
+          <children>
+                  <TextField id="search-table-field" fx:id="tableNameSearchArea" depthTest="DISABLE" onKeyReleased="#filterTableList" prefWidth="284.0" promptText="TABLE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <ListView id="table-list" fx:id="tableListView" layoutY="38.0" prefHeight="791.0" prefWidth="284.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0" />
+          </children>
+        </AnchorPane>
+      <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0">
+        <children>
+                  <TabPane id="sqlTabArea" fx:id="sqlTabArea" tabClosingPolicy="ALL_TABS" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0" />
+                  <BorderPane id="drag-drop-area" fx:id="dragArea" layoutY="-2.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <center>
+                        <Label id="drag-and-drop" text="+" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+        </children>
+      </AnchorPane>
+      </items>
+         <effect>
+            <Glow />
+         </effect>
+    </SplitPane>
+   </children>
+</AnchorPane>

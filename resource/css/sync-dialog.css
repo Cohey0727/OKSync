@@ -1,0 +1,55 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+#main-pane {
+    -fx-background-color: #FFF;
+}
+
+.combo-box {
+	-fx-background-color: #FFF;
+	-fx-min-width: 300.0;
+	-fx-border-width: 0.5;
+	-fx-border-color: #243654;
+	-fx-border-radius: 50;
+	-fx-background-radius: 50;
+}
+
+#sync-lable {
+    -fx-font-family: 'Helvetica';
+    -fx-font-size: 18;
+    -fx-font-weight: 'bold';
+}
+	
+.text {
+    -fx-font-family: 'Helvetica';
+    -fx-font-size: 16;
+}
+
+.button {
+	-fx-background-color: #FFF;
+	-fx-min-width: 150.0;
+	-fx-max-width: 150.0;
+	-fx-border-width: 0.5;
+	-fx-border-color: #243654;
+	-fx-border-radius: 50;
+	-fx-background-radius: 50;
+}
+
+.button:hover, .button:focused{
+	-fx-background-color: #DDD;
+	-fx-min-width: 150.0;
+	-fx-max-width: 150.0;
+	-fx-border-width: 0.5;
+	-fx-border-color: #243654;
+	-fx-border-radius: 50;
+	-fx-background-radius: 50;
+}
+
+.button:pressed {
+	-fx-background-color: #666;
+	-fx-min-width: 150.0;
+	-fx-max-width: 150.0;
+	-fx-border-width: 0.5;
+	-fx-border-color: #243654;
+	-fx-border-radius: 50;
+	-fx-background-radius: 50;
+}

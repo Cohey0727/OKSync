@@ -1,0 +1,133 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+Button {
+  -fx-background-color: #EAEAEA;
+  -fx-border-color: #FDFDFD;
+  -fx-padding: 5;
+  -fx-margin: 5;
+  -fx-background-radius: 1;
+  -fx-stroke: green;
+  -fx-stroke-width: 5;
+  -fx-stroke-dash-array: 12 2 4 2;
+  -fx-stroke-dash-offset: 6;
+  -fx-stroke-line-cap: butt;
+}
+
+TableView {
+	  -fx-background-color: #FFF;
+}
+
+Button:hover {
+  -fx-background-color: #FDFDFD;
+}
+
+#mainTableView {
+  -fx-background-color: #FFF;
+}
+
+#mainTableView:selected {
+  -fx-background-color: #FFF;
+}
+
+#tableList_list {
+  -fx-border-radius: 40;
+}
+
+.tableCellClass {
+  -fx-background-color: #FF0000;
+}
+
+#sqlTabArea {
+  -fx-background-color: #ADADAD;
+}
+
+.tab {
+  -fx-pref-width: 232.0;
+  -fx-border-width: 0 0 4 0;
+  -fx-border-color: #DCDCDC;
+  -fx-background-color: #FFF;
+  -fx-background-color: #FFF, #FFF, #FFF, #FFF;
+  -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+}
+
+.tab:selected {
+  -fx-min-width: 300.0;
+  -fx-border-color: #49E3FD;
+  -fx-background-color: #FFF;
+}
+
+.tab:focused {
+  -fx-border-width: 0 0 4 0;
+  -fx-background-color: #FFF;
+  -fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+-fx-background-insets: 0 0 -1 0, 0, 1, 2;
+}
+
+.tab-pane *.tab-header-background {
+  -fx-background-color: #FFF;
+  -fx-effect: innershadow(two-pass-box, rgba(0, 0, 0, 0.0), 0, 0.0, 0, 0);
+}
+
+.tab-close-button {
+  -fx-background-color: #696969;
+}
+
+Button:pressed {
+  -fx-background-color: #DDDDDD;
+}
+
+.menu {
+  -fx-text-alignment: center;
+  -fx-padding: 4 0 4 24;
+  -fx-margin: 0;
+  -fx-border-radius: 1;
+  -fx-background-radius: 1;
+  -fx-pref-width: 80;
+}
+
+#AboutMe {
+-fx-background-radius: 30;
+-fx-border-radius: 30;
+-fx-border-width:5;
+-fx-border-color:blue;
+}
+
+  /*
+ * Empty Stylesheet file.
+ */
+
+.root{
+    -fx-background-color: #262626;
+}
+
+.table-view{
+   -fx-background-color: transparent;
+}
+
+.table-view:focused{
+    -fx-background-color: transparent;
+}
+
+/* Spaltenköpfe
+    Struktur column-header-background -> column-header */
+
+.table-view .column-header-background{
+    -fx-background-color: linear-gradient(#131313 0%, #424141 100%);
+}
+
+.table-view .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.table-view .table-cell{
+    -fx-text-fill: #000000;
+}
+
+.table-view{
+   -fx-background-color: transparent;
+}

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<VBox minHeight="800.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" stylesheets="@../css/application.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainController">
+  <children>
+      <AnchorPane fx:id="titleBar" VBox.vgrow="NEVER">
+         <children>
+          <MenuBar prefHeight="27.0">
+            <menus>
+              <Menu mnemonicParsing="false" styleClass="menu" text="File">
+                <items>
+                  <MenuItem fx:id="importButton" mnemonicParsing="false" text="Import" />
+                        <MenuItem fx:id="openButton" mnemonicParsing="false" text="Open" />
+                        <MenuItem fx:id="saveButton" mnemonicParsing="false" text="Save" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="preferenceButton" mnemonicParsing="false" text="Preference" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="closeButton" mnemonicParsing="false" text="Close" />
+                </items>
+              </Menu>
+              <Menu mnemonicParsing="false" styleClass="menu" text="Edit">
+                <items>
+                        <CheckMenuItem fx:id="displayEmptyTable" mnemonicParsing="false" selected="true" text="Display Empty Table" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="executeSqlButton" mnemonicParsing="false" text="Execute SQL" />
+                  <MenuItem fx:id="addAndEqualButton" mnemonicParsing="false" text="Add WHERE... AND ? = ''" />
+                        <MenuItem fx:id="addOrEqualButton" mnemonicParsing="false" text="Add WHERE... OR ? = ''" />
+                        <MenuItem fx:id="addAndLikeButton" mnemonicParsing="false" text="Add WHERE... AND ? LIKE '%%'" />
+                        <MenuItem fx:id="addOrLikeButton" mnemonicParsing="false" text="Add WHERE... OR ? LIKE '%%'" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="synchronizeButton" mnemonicParsing="false" text="Sync" />
+                        <MenuItem fx:id="copyButton" mnemonicParsing="false" text="Copy" visible="false" />
+                        <MenuItem fx:id="tabCloseButton" mnemonicParsing="false" text="Close" visible="false" />
+                </items>
+              </Menu>
+              <Menu mnemonicParsing="false" styleClass="menu" text="Help">
+                <items>
+                  <MenuItem fx:id="aboutMeMenu" mnemonicParsing="false" text="About OKSync" />
+                        <MenuItem fx:id="rightAlignButton" mnemonicParsing="false" visible="false" />
+                        <MenuItem fx:id="leftAlignButton" mnemonicParsing="false" visible="false" />
+                </items>
+              </Menu>
+            </menus>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+          </MenuBar>
+            <Button id="close-system-button" fx:id="closeSysButton" layoutX="1173.0" layoutY="-1.0" mnemonicParsing="false" styleClass="system-button" text="✕" visible="false" AnchorPane.bottomAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="4.0">
+               <font>
+                  <Font name="Georgia" size="9.0" />
+               </font>
+            </Button>
+            <Button id="maximize-system-button" fx:id="maximizeSysButton" layoutX="1183.0" layoutY="9.0" mnemonicParsing="false" styleClass="system-button" text="＋" visible="false" AnchorPane.bottomAnchor="4.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="4.0">
+               <font>
+                  <Font name="Georgia" size="9.0" />
+               </font>
+            </Button>
+            <Button id="minimize-system-button" fx:id="minimizeSysButton" layoutX="1183.0" layoutY="9.0" mnemonicParsing="false" styleClass="system-button" text="ー" visible="false" AnchorPane.bottomAnchor="4.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="4.0">
+               <font>
+                  <Font name="Georgia" size="9.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+    <SplitPane dividerPositions="0.24" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <items>
+        <AnchorPane maxWidth="420.0" prefHeight="738.0" prefWidth="250.0">
+          <children>
+                  <TextField fx:id="tableNameSearchArea" onKeyReleased="#filterTableList" promptText="TABLE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <ListView id="tableList_list" fx:id="tableListView" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="36.0" />
+          </children>
+        </AnchorPane>
+      <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0">
+        <children>
+                  <TabPane id="sqlTabArea" fx:id="sqlTabArea" tabClosingPolicy="ALL_TABS" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0" />
+                  <BorderPane id="drag-drop-area" fx:id="dragArea" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <center>
+                        <Label id="drag-and-drop" text="+" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+        </children>
+      </AnchorPane>
+      </items>
+         <effect>
+            <Glow />
+         </effect>
+    </SplitPane>
+    <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
+      <children>
+        <Label id="title-lable" fx:id="titleLable" maxHeight="1.7976931348623157E308" maxWidth="-1.0" text="title" HBox.hgrow="ALWAYS">
+          <font>
+            <Font size="11.0" fx:id="x3" />
+          </font>
+          <textFill>
+            <Color blue="0.625" green="0.625" red="0.625" fx:id="x4" />
+          </textFill>
+        </Label>
+        <Pane prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+        <Label fx:id="DBStatus_label" font="$x3" maxWidth="-1.0" text="Right status" textFill="$x4" HBox.hgrow="NEVER" />
+      </children>
+      <padding>
+        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+      </padding>
+    </HBox>
+  </children>
+</VBox>
