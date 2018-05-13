@@ -41,8 +41,8 @@ import javafx.scene.input.KeyCombination;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser.ExtensionFilter;
 
 public class MainController extends AbstractFormController {
@@ -150,8 +150,7 @@ public class MainController extends AbstractFormController {
     private void InitializeSideBar() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(SystemUtil.getResourceURL("sidebar.fxml", ResourceType.FXML));
-            VBox sideBar;
-            sideBar = (VBox) fxmlLoader.load();
+            AnchorPane sideBar = (AnchorPane) fxmlLoader.load();
             sideDrawer.setSidePane(sideBar);
         } catch (IOException e1) {
             e1.printStackTrace();

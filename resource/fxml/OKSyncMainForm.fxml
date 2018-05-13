@@ -20,11 +20,6 @@
 
 <AnchorPane stylesheets="@../css/application.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainController">
    <children>
-      <AnchorPane id="side-bar" maxWidth="64.0" minWidth="64.0" prefWidth="45.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <JFXDrawer id="side-drawer" fx:id="sideDrawer" prefHeight="819.0" prefWidth="260.0" />
-            <JFXHamburger fx:id="sideBarHambuger" layoutX="17.0" layoutY="9.0" prefHeight="39.0" prefWidth="30.0" />
-         </children></AnchorPane>
     <SplitPane dividerPositions="0.24" focusTraversable="true" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <items>
         <AnchorPane id="table-list-area" maxWidth="420.0" prefWidth="267.0">
@@ -97,5 +92,10 @@
             <Glow />
          </effect>
     </SplitPane>
+      <AnchorPane id="side-bar" maxWidth="64.0" minWidth="64.0" prefWidth="45.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXDrawer id="side-drawer" fx:id="sideDrawer" defaultDrawerSize="300.0" prefHeight="289.0" prefWidth="48.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <JFXHamburger fx:id="sideBarHambuger" layoutX="17.0" layoutY="9.0" prefHeight="39.0" prefWidth="30.0" />
+         </children></AnchorPane>
    </children>
 </AnchorPane>
