@@ -1,4 +1,5 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
 * {
   -fx-background-color: #2D3447;
 }
@@ -31,7 +32,8 @@ Button:hover {
   -fx-padding: 5 1 5 1;
 }
 
-  /*
+
+/*
  * Tab
  */
 
@@ -67,7 +69,7 @@ Button:hover {
 #drag-and-drop {
   -fx-font-size: 96 pt;
   -fx-font-family: "Segoe UI Light";
-  -fx-text-fill: #dedede;
+  -fx-text-fill: #FDFDFD;
   -fx-text-alignment: center;
   -fx-alignment: center;
   -fx-border-color: #FDFDFD;
@@ -80,16 +82,15 @@ Button:hover {
 }
 
 
- /*
+/*
  * Menu Bar
  */
-
 
 .menu-bar {
   -fx-background-color: #2D3447;
 }
 
-.menu-button > .label {
+.menu-button>.label {
   -fx-text-alignment: center;
   -fx-alignment: center;
   -fx-min-width: 90.0;
@@ -103,8 +104,8 @@ Button:hover {
   -fx-background-color: #485168;
 }
 
-.menu-item .label{
-  -fx-min-width: USE_COMPUTED_SIZE;  
+.menu-item .label {
+  -fx-min-width: USE_COMPUTED_SIZE;
   -fx-pref-width: USE_COMPUTED_SIZE;
   -fx-font-size: 14 pt;
   -fx-label-line-length: 24;
@@ -113,7 +114,7 @@ Button:hover {
 
 .menu-item {
   -fx-font-size: 14 pt;
-  -fx-min-width: 240.0;  
+  -fx-min-width: 240.0;
   -fx-label-line-length: 8;
   -fx-text-fill: #242424;
 }
@@ -122,10 +123,10 @@ Button:hover {
   -fx-background-color: #D4D3DF;
 }
 
- /*
+
+/*
  * System Button
  */
-
 
 .system-button {
   -fx-border-radius: 24;
@@ -191,9 +192,15 @@ Button:hover {
   -fx-alignment: center;
 }
 
- /*
+
+/*
  * Table List
  */
+
+#table-list-area {
+  -fx-background-color: #1D2427;
+}
+
 #table-list {
   -fx-background-color: #1D2427;
 }
@@ -210,96 +217,110 @@ Button:hover {
 }
 
 #table-list .list-cell:even {
-  -fx-background-color: #96A2D6 !important;
+  -fx-background-color: #DFDFDF !important;
 }
 
 #table-list .list-cell:odd {
-  -fx-background-color: #C6D2F6 !important;
+  -fx-background-color: #ADADAD !important;
 }
 
-#table-list .scroll-bar:horizontal .track,
-#table-list .scroll-bar:vertical .track{
-  -fx-background-color:transparent;
-  -fx-border-color:transparent;
-  -fx-background-radius: 0em;
-  -fx-border-radius:2em;
-}
- 
-#table-list .scroll-bar:horizontal .increment-button ,
-#table-list .scroll-bar:horizontal .decrement-button {
-    -fx-background-color:transparent;
-  -fx-background-radius: 0em;
-  -fx-padding:0 0 10 0;
- 
-}
- 
-#table-list .scroll-bar:vertical .increment-button ,
-#table-list .scroll-bar:vertical .decrement-button {
-  -fx-background-color:transparent;
-  -fx-background-radius: 0em;
-  -fx-padding:0 10 0 0;
- 
-}
- 
-#table-list  .scroll-bar .increment-arrow,
-#table-list  .scroll-bar .decrement-arrow {
-  -fx-shape: " ";  
-  -fx-padding:0;
-}
- 
-#table-list .scroll-bar:horizontal .track,
-#table-list .scroll-bar:vertical .track {
-  -fx-background-color:transparent;
-  -fx-border-color:transparent;
-  -fx-background-radius: 0em;
-  -fx-border-radius:2em;
-}
- 
-#table-list .scroll-bar:horizontal .increment-button ,
-#table-list .scroll-bar:horizontal .decrement-button {
-  -fx-background-color:transparent;
-  -fx-background-radius: 0em;
-  -fx-padding:0 0 10 0;
- 
+.list-cell {
+  -fx-text-fill: #000;
 }
 
-#table-list .scroll-bar:vertical .increment-button ,
-#table-list .scroll-bar:vertical .decrement-button { 
-  -fx-background-color:transparent;
+#table-list .scroll-bar:horizontal .track, #table-list .scroll-bar:vertical .track {
+  -fx-background-color: transparent;
+  -fx-border-color: transparent;
   -fx-background-radius: 0em;
-  -fx-padding:0 10 0 0;
- 
+  -fx-border-radius: 2em;
 }
 
-#table-list  .scroll-bar .increment-arrow,
-#table-list  .scroll-bar .decrement-arrow {
-  -fx-shape: " ";  
-  -fx-padding:0;
+#table-list .scroll-bar:horizontal .increment-button, #table-list .scroll-bar:horizontal .decrement-button {
+  -fx-background-color: transparent;
+  -fx-background-radius: 0em;
+  -fx-padding: 0 0 10 0;
 }
- 
-#table-list .scroll-bar:horizontal .thumb,
-#table-list .scroll-bar:vertical .thumb {
-  -fx-background-color:derive(black,90%);
+
+#table-list .scroll-bar:vertical .increment-button, #table-list .scroll-bar:vertical .decrement-button {
+  -fx-background-color: transparent;
+  -fx-background-radius: 0em;
+  -fx-padding: 0 10 0 0;
+}
+
+#table-list .scroll-bar .increment-arrow, #table-list .scroll-bar .decrement-arrow {
+  -fx-shape: " ";
+  -fx-padding: 0;
+}
+
+#table-list .scroll-bar:horizontal .track, #table-list .scroll-bar:vertical .track {
+  -fx-background-color: transparent;
+  -fx-border-color: transparent;
+  -fx-background-radius: 0em;
+  -fx-border-radius: 2em;
+}
+
+#table-list .scroll-bar:horizontal .increment-button, #table-list .scroll-bar:horizontal .decrement-button {
+  -fx-background-color: transparent;
+  -fx-background-radius: 0em;
+  -fx-padding: 0 0 10 0;
+}
+
+#table-list .scroll-bar:vertical .increment-button, #table-list .scroll-bar:vertical .decrement-button {
+  -fx-background-color: transparent;
+  -fx-background-radius: 0em;
+  -fx-padding: 0 10 0 0;
+}
+
+#table-list .scroll-bar .increment-arrow, #table-list .scroll-bar .decrement-arrow {
+  -fx-shape: " ";
+  -fx-padding: 0;
+}
+
+#table-list .scroll-bar:horizontal .thumb, #table-list .scroll-bar:vertical .thumb {
+  -fx-background-color: derive(black, 90%);
   -fx-background-insets: 2, 0, 0;
   -fx-background-radius: 2em;
- 
 }
 
 
+/*
+* Side Bar
+*/
 
- /*
- * Empty Stylesheet file.
- */
-
-.root{
+#side-bar {
   -fx-background-color: #2D3447;
 }
 
-.table-view{
-   -fx-background-color: transparent;
+.jfx-hamburger {
+  -fx-background-color: #2D3447;
+  -fx-cursor: hand;
 }
 
-.table-view:focused{
+.jfx-hamburger StackPane {
+  -fx-background-color: #C6D2F6;
+}
+
+#side-drawer {
+  -fx-background-color: #F00;
+}
+
+#jfx-drawer {
+  -fx-background-color: #F00;
+}
+
+/*
+ * Empty Stylesheet file.
+ */
+
+.root {
+  -fx-background-color: #2D3447;
+}
+
+.table-view {
+  -fx-background-color: transparent;
+}
+
+.table-view:focused {
   -fx-background-color: transparent;
 }
 
@@ -307,7 +328,7 @@ Button:hover {
   -fx-background-color: linear-gradient(#131313 0%, #424141 100%);
 }
 
-.table-view .column-header-background .label{
+.table-view .column-header-background .label {
   -fx-background-color: transparent;
   -fx-text-fill: white;
 }
@@ -316,11 +337,10 @@ Button:hover {
   -fx-background-color: transparent;
 }
 
-.table-view .table-cell{
+.table-view .table-cell {
   -fx-text-fill: #2D3447;
 }
 
-.table-view{
-   -fx-background-color: transparent;
+.table-view {
+  -fx-background-color: transparent;
 }
-

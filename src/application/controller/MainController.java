@@ -1,8 +1,13 @@
 package application.controller;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import com.jfoenix.controls.JFXDrawer;
+import com.jfoenix.controls.JFXHamburger;
+import com.jfoenix.transitions.hamburger.HamburgerSlideCloseTransition;
 
 import application.component.java.SqlTab;
 import application.form.AboutMeForm;
@@ -10,12 +15,15 @@ import application.form.PreferenceForm;
 import application.form.SyncForm;
 import common.db.DBManager;
 import common.db.DataSourceFactory;
+import common.system.SystemUtil;
+import common.system.SystemUtil.ResourceType;
 import common.system.component.TargetTableView;
 import common.system.data.FileIOManager;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.CheckMenuItem;
@@ -31,8 +39,10 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser.ExtensionFilter;
 
 public class MainController extends AbstractFormController {
@@ -83,6 +93,9 @@ public class MainController extends AbstractFormController {
     @FXML
     private BorderPane dragArea;
     @FXML
+    private JFXHamburger sideBarHambuger;
+    @FXML
+    private JFXDrawer sideDrawer;
     //    private AnchorPane titleBar;
     //    @FXML
     //    private Button closeSysButton;
@@ -131,35 +144,30 @@ public class MainController extends AbstractFormController {
         InitializeFileMenu();
         InitializeEditMenu();
         InitializeHelpMenu();
-        InitializeSystemArea();
+        InitializeSideBar();
     }
 
-    private void InitializeSystemArea() {
-        //        titleBar.setOnMouseDragged((e) -> {
-        //            getStage().setX(e.getScreenX() - offsetX);
-        //            getStage().setY(e.getScreenY() - offsetY);
-        //        });
-        //        titleBar.setOnMousePressed(e -> {
-        //            offsetX = e.getSceneX();
-        //            offsetY = e.getSceneY();
-        //        });
-        //
-        //        closeSysButton.setOnAction((e) -> {
-        //            close();
-        //        });
-        //        minimizeSysButton.setOnAction((e) -> {
-        //            getStage().setWidth(0);
-        //            getStage().setHeight(0);
-        //            //            Screen screen = Screen.getPrimary();
-        //            //            Rectangle2D bounds = screen.getVisualBounds();
-        //            //            getStage().setX(bounds.getMinX());
-        //            //            getStage().setY(bounds.getMinY());
-        //            //            getStage().setWidth(bounds.getWidth());
-        //            //            getStage().setHeight(bounds.getHeight());
-        //        });
-        //        maximizeSysButton.setOnAction((e) -> {
-        //            getStage().setMaximized(!getStage().isMaximized());
-        //        });
+    private void InitializeSideBar() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(SystemUtil.getResourceURL("sidebar.fxml", ResourceType.FXML));
+            VBox sideBar;
+            sideBar = (VBox) fxmlLoader.load();
+            sideDrawer.setSidePane(sideBar);
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+        HamburgerSlideCloseTransition task = new HamburgerSlideCloseTransition(sideBarHambuger);
+        task.setRate(-1);
+        sideBarHambuger.addEventHandler(MouseEvent.MOUSE_PRESSED, (e) -> {
+            task.setRate(task.getRate() * -1);
+            task.play();
+
+            if (sideDrawer.isOpened()) {
+                sideDrawer.close();
+            } else {
+                sideDrawer.open();
+            }
+        });
     }
 
     private void reloadTableData() {
