@@ -96,18 +96,6 @@ public class MainController extends AbstractFormController {
     private JFXHamburger sideBarHambuger;
     @FXML
     private JFXDrawer sideDrawer;
-    //    private AnchorPane titleBar;
-    //    @FXML
-    //    private Button closeSysButton;
-    //    @FXML
-    //    private Button minimizeSysButton;
-    //    @FXML
-    //    private Button maximizeSysButton;
-    //    @FXML
-    //    private Label titleLable;
-
-    private double offsetX = 0;
-    private double offsetY = 0;
 
     @FXML
     private void filterTableList(KeyEvent e) {
@@ -404,15 +392,15 @@ public class MainController extends AbstractFormController {
             form.show(getStage());
         });
         aboutMeMenu.setAccelerator(new KeyCodeCombination(KeyCode.F1));
-        rightAlignButton.setOnAction((e) -> {
-            AboutMeForm form = new AboutMeForm();
-            form.show(getStage());
-        });
-        rightAlignButton.setAccelerator(new KeyCodeCombination(KeyCode.Y, KeyCombination.CONTROL_DOWN));
-        leftAlignButton.setOnAction((e) -> {
-            AboutMeForm form = new AboutMeForm();
-            form.show(getStage());
-        });
+        //        rightAlignButton.setOnAction((e) -> {
+        //            AboutMeForm form = new AboutMeForm();
+        //            form.show(getStage());
+        //        });
+        //        rightAlignButton.setAccelerator(new KeyCodeCombination(KeyCode.Y, KeyCombination.CONTROL_DOWN));
+        //        leftAlignButton.setOnAction((e) -> {
+        //            AboutMeForm form = new AboutMeForm();
+        //            form.show(getStage());
+        //        });
         //        leftAlignButton.setAccelerator(new KeyCodeCombination(KeyCode.COMMAND));
     }
 

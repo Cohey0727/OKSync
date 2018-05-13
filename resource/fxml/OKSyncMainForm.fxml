@@ -30,10 +30,10 @@
         </AnchorPane>
       <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0">
         <children>
-                  <TabPane id="sqlTabArea" fx:id="sqlTabArea" tabClosingPolicy="ALL_TABS" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0" />
-                  <BorderPane id="drag-drop-area" fx:id="dragArea" layoutY="-2.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TabPane id="sql-tab-area" fx:id="sqlTabArea" tabClosingPolicy="ALL_TABS" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0" />
+                  <BorderPane id="drag-drop-area" fx:id="dragArea" layoutX="220.0" layoutY="322.0" prefHeight="494.0" prefWidth="689.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <center>
-                        <Label id="drag-and-drop" text="+" BorderPane.alignment="CENTER" />
+                        <Label id="drag-drop-logo" text="+" BorderPane.alignment="CENTER" />
                      </center>
                      <top>
                         <AnchorPane fx:id="titleBar" focusTraversable="true" prefHeight="0.0" prefWidth="334.0" visible="false" BorderPane.alignment="CENTER">

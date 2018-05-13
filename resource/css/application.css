@@ -6,7 +6,6 @@
 
 Button {
   -fx-background-color: #EAEAEA;
-  -fx-border-color: #FDFDFD;
   -fx-padding: 5;
   -fx-background-radius: 1;
   -fx-stroke: green;
@@ -65,7 +64,7 @@ Button:hover {
   -fx-background-color: #485168;
 }
 
-#drag-and-drop {
+#drag-drop-logo {
   -fx-font-size: 96 pt;
   -fx-font-family: "Segoe UI Light";
   -fx-text-fill: #FDFDFD;
@@ -291,7 +290,7 @@ Button:hover {
 }
 
 .jfx-hamburger {
-  -fx-background-color: #2D3447;
+  -fx-background-color: #00000000;
   -fx-cursor: hand;
 }
 
@@ -300,22 +299,45 @@ Button:hover {
 }
 
 #side-drawer {
-  -fx-background-color: transparent;
+  -fx-background-color: #A0A0AA;
 }
 
-Button.drawer-button {
-  -fx-background-color: #C6D2F6;
+.drawer-button {
+  -fx-background-color: #A0A0AA;
   -fx-text-alignment: center;
+  -fx-text-align: center;
   -fx-alignment: left;
+  -fx-border-color: #808098;
+  -fx-border-width: 0 0 0 0;
 }
 
-Button.drawer-button .label{
-  -fx-background-color: #000;
-  -fx-pref-height: 120;
-  -fx-text-alignment: center;
-  -fx-alignment: center;
-  -fx-padding: 0 0 10 100;
+.filetr-label {
+  -fx-background-color: #00000000;
+  -fx-pref-height: 28;
+  -fx-cursor: hand;
 }
+
+.filetr-label:hover {
+  -fx-background-color: #B5B5C048;
+}
+
+.drawer-label {
+  -fx-background-color: #A0A0AA;
+  -fx-pref-height: 28;
+}
+
+.drawer-shortcut-label {
+  -fx-background-color: #00000000;
+}
+
+#drawer-offset-pane {
+  -fx-background-color: #00000000;
+}
+
+Button.drawer-button:hover, Button.drawer-button:focused, Button.drawer-button:selected {
+  -fx-background-color: #B5B5C0;
+}
+
 
 /*
  * Empty Stylesheet file.
