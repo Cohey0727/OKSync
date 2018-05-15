@@ -1,8 +1,8 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
 
-* {
+/* * {
   -fx-background-color: #2D3447;
-}
+} */
 
 Button {
   -fx-background-color: #EAEAEA;
@@ -30,38 +30,67 @@ Button:hover {
   -fx-padding: 5 1 5 1;
 }
 
-
 /*
  * Tab
  */
 
-.tab {
-  -fx-pref-width: 232.0;
-  -fx-border-width: 0 0 4 0;
-  -fx-border-color: #DCDCDC;
-  -fx-background-color: #FFF;
-  -fx-background-color: #FFF, #FFF, #FFF, #FFF;
-  -fx-background-insets: 0 0 -1 0, 0, 1, 2;
-}
+ .tab-header-background {
+   -fx-background-color: #2D3447;
+   -fx-pref-height: 36px;
+ }
 
-.tab:selected {
-  -fx-min-width: 300.0;
-  -fx-border-color: #49E3FD;
-  -fx-background-color: #FFF;
-}
+ .sql-tab {
+   -fx-pref-width: 240.0;
+   -fx-border-width: 0 0 4 0;
+   -fx-border-color: #DCDCDC;
+   -fx-background-color: #FFF;
+   -fx-background-color: #FFF, #FFF, #FFF, #FFF;
+   -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+   -fx-background-color: #2D3447;
+   -fx-border-radius: 0;
+   -fx-background-radius: 0;
+ }
 
-.tab:focused {
-  -fx-border-width: 0 0 4 0;
-  -fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
-  -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+ .sql-tab:selected {
+   -fx-border-color: #49E3FD;
+ }
+
+ .tab-header-area, .tab-container, .headers-region {
+   -fx-background-color: #2D3447;
+   -fx-pref-height: 36px;
+ }
+
+ .tab .focus-indicator .text {
+   -fx-background-color: #FFF !important;
+ }
+
+ .sql-tab .tab-label {
+   -fx-background-color: #2D3447;
+   -fx-text-fill: #FFF;
+ }
+
+ .sql-tab .text {
+   -fx-background-color: #FFFFFF;
+   -fx-text-fill: #FFF;
+ }
+
+ .sql-text-area {
+   -fx-background-insets: 0;
+   -fx-border-radius: 0;
+   -fx-background-radius: 0;
+   -fx-border-color: #1D2427;
+   -fx-border-style: solid;
+   -fx-border-width: 2 0 2 2;
+   -fx-background-color: #2D3447;
+   -fx-pref-height: 24;
+ }
+
+.tab-pane {
+-fx-background-color: #2D3447;
 }
 
 .tab-close-button {
   -fx-background-color: #696969;
-}
-
-.tab-pane {
-  -fx-background-color: #485168;
 }
 
 #drag-drop-logo {
@@ -78,7 +107,6 @@ Button:hover {
   -fx-background-radius: 40;
   -fx-border-radius: 40;
 }
-
 
 /*
  * Menu Bar
@@ -120,7 +148,6 @@ Button:hover {
 .menu-item:hover, .menu-item:focused {
   -fx-background-color: #D4D3DF;
 }
-
 
 /*
  * System Button
@@ -190,7 +217,6 @@ Button:hover {
   -fx-alignment: center;
 }
 
-
 /*
  * Table List
  */
@@ -215,11 +241,11 @@ Button:hover {
 }
 
 #table-list .list-cell:even {
-  -fx-background-color: #DFDFDF !important;
+  -fx-background-color: #DFDFDF;
 }
 
 #table-list .list-cell:odd {
-  -fx-background-color: #ADADAD !important;
+  -fx-background-color: #ADADAD;
 }
 
 .list-cell {
@@ -280,7 +306,6 @@ Button:hover {
   -fx-background-radius: 2em;
 }
 
-
 /*
 * Side Bar
 */
@@ -338,21 +363,17 @@ Button.drawer-button:hover, Button.drawer-button:focused, Button.drawer-button:s
   -fx-background-color: #B5B5C0;
 }
 
-
 /*
- * Empty Stylesheet file.
+ * Tab
  */
 
-.root {
-  -fx-background-color: #2D3447;
-}
 
 .table-view {
-  -fx-background-color: transparent;
+  -fx-background-color: #FFF;
 }
 
 .table-view:focused {
-  -fx-background-color: transparent;
+  -fx-background-color: #FFF;
 }
 
 .table-view .column-header-background {
@@ -361,17 +382,13 @@ Button.drawer-button:hover, Button.drawer-button:focused, Button.drawer-button:s
 
 .table-view .column-header-background .label {
   -fx-background-color: transparent;
-  -fx-text-fill: white;
+  -fx-text-fill: #FFF;
 }
 
 .table-view .column-header {
-  -fx-background-color: transparent;
+  -fx-background-color: #2D3447;
 }
 
 .table-view .table-cell {
   -fx-text-fill: #2D3447;
-}
-
-.table-view {
-  -fx-background-color: transparent;
 }

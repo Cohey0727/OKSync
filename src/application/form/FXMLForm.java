@@ -3,6 +3,8 @@ package application.form;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import org.scenicview.ScenicView;
+
 import application.common.AfterCloseAction;
 import application.controller.AbstractFormController;
 import application.controller.preference.content.ConnectionDialogController;
@@ -36,7 +38,7 @@ public abstract class FXMLForm implements Form {
             stage.getIcons().add(new Image(SystemUtil.getResourceURL(getIcon(), ResourceType.IMAGE).openStream()));
             stage.setTitle(getTitle());
             stage.setScene(scene);
-            //            ScenicView.show(scene);
+            ScenicView.show(scene);
             stage.initModality(Modality.WINDOW_MODAL);
             if (owner != null) {
                 stage.initOwner(owner.getScene().getWindow());

@@ -34,9 +34,11 @@ public class SqlTab extends Tab {
 
     public SqlTab(String tableNm, EventHandler<KeyEvent> handle) {
         super(tableNm);
+        this.getStyleClass().add("sql-tab");
         sqlTextArea.setText("SELECT * FROM " + tableNm);
         sqlTextArea.setPromptText("SQL");
         sqlTextArea.getStyleClass().add("sqlTextArea");
+        sqlTextArea.getStyleClass().add("sql-text-area");
         sqlTextArea.addEventFilter(KeyEvent.KEY_PRESSED, handle);
         sqlTextArea.addEventFilter(KeyEvent.KEY_PRESSED, (e) -> {
             KeyCode code = e.getCode();
