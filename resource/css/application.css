@@ -30,63 +30,67 @@ Button:hover {
   -fx-padding: 5 1 5 1;
 }
 
+.split-pane {
+  -fx-background-color: #2D3447;
+}
+
 /*
  * Tab
  */
 
- .tab-header-background {
-   -fx-background-color: #2D3447;
-   -fx-pref-height: 36px;
- }
+.tab-header-background {
+  -fx-background-color: #2D3447;
+  -fx-pref-height: 36px;
+}
 
- .sql-tab {
-   -fx-pref-width: 240.0;
-   -fx-border-width: 0 0 4 0;
-   -fx-border-color: #DCDCDC;
-   -fx-background-color: #FFF;
-   -fx-background-color: #FFF, #FFF, #FFF, #FFF;
-   -fx-background-insets: 0 0 -1 0, 0, 1, 2;
-   -fx-background-color: #2D3447;
-   -fx-border-radius: 0;
-   -fx-background-radius: 0;
- }
+.sql-tab {
+  -fx-pref-width: 240.0;
+  -fx-border-width: 0 0 4 0;
+  -fx-border-color: #DCDCDC;
+  -fx-background-color: #FFF;
+  -fx-background-color: #FFF, #FFF, #FFF, #FFF;
+  -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+  -fx-background-color: #2D3447;
+  -fx-border-radius: 0;
+  -fx-background-radius: 0;
+}
 
- .sql-tab:selected {
-   -fx-border-color: #49E3FD;
- }
+.sql-tab:selected {
+  -fx-border-color: #49E3FD;
+}
 
- .tab-header-area, .tab-container, .headers-region {
-   -fx-background-color: #2D3447;
-   -fx-pref-height: 36px;
- }
+.tab-header-area, .tab-container, .headers-region {
+  -fx-background-color: #2D3447;
+  -fx-pref-height: 36px;
+}
 
- .tab .focus-indicator .text {
-   -fx-background-color: #FFF !important;
- }
+.tab .focus-indicator .text {
+  -fx-background-color: #FFF !important;
+}
 
- .sql-tab .tab-label {
-   -fx-background-color: #2D3447;
-   -fx-text-fill: #FFF;
- }
+.sql-tab .tab-label {
+  -fx-background-color: #2D3447;
+  -fx-text-fill: #FFF;
+}
 
- .sql-tab .text {
-   -fx-background-color: #FFFFFF;
-   -fx-text-fill: #FFF;
- }
+.sql-tab .text {
+  -fx-background-color: #FFFFFF;
+  -fx-text-fill: #FFF;
+}
 
- .sql-text-area {
-   -fx-background-insets: 0;
-   -fx-border-radius: 0;
-   -fx-background-radius: 0;
-   -fx-border-color: #1D2427;
-   -fx-border-style: solid;
-   -fx-border-width: 2 0 2 2;
-   -fx-background-color: #2D3447;
-   -fx-pref-height: 24;
- }
+.sql-text-area {
+  -fx-background-insets: 0;
+  -fx-border-radius: 0;
+  -fx-background-radius: 0;
+  -fx-border-color: #1D2427;
+  -fx-border-style: solid;
+  -fx-border-width: 2 0 2 2;
+  -fx-background-color: #2D3447;
+  -fx-pref-height: 24;
+}
 
 .tab-pane {
--fx-background-color: #2D3447;
+  -fx-background-color: #2D3447;
 }
 
 .tab-close-button {
@@ -314,6 +318,10 @@ Button:hover {
   -fx-background-color: #2D3447;
 }
 
+#side-area {
+  -fx-background-color: #2D3447;
+}
+
 .jfx-hamburger {
   -fx-background-color: #00000000;
   -fx-cursor: hand;
@@ -324,11 +332,11 @@ Button:hover {
 }
 
 #side-drawer {
-  -fx-background-color: #A0A0AA;
+  -fx-background-color: #00000000;
 }
 
-.drawer-button {
-  -fx-background-color: #A0A0AA;
+.drawer-menu-button {
+  -fx-background-color: #00000000;
   -fx-text-alignment: center;
   -fx-text-align: center;
   -fx-alignment: left;
@@ -338,7 +346,7 @@ Button:hover {
 
 .filetr-label {
   -fx-background-color: #00000000;
-  -fx-pref-height: 28;
+  -fx-pref-height: 40;
   -fx-cursor: hand;
 }
 
@@ -347,28 +355,26 @@ Button:hover {
 }
 
 .drawer-label {
-  -fx-background-color: #A0A0AA;
-  -fx-pref-height: 28;
+  -fx-background-color: #00000000;
+  -fx-text-fill: #FFFFFF;
+  -fx-pref-height: 40;
 }
 
 .drawer-shortcut-label {
   -fx-background-color: #00000000;
+  -fx-text-fill: #FFFFFF;
+  -fx-pref-height: 40;
 }
 
 #drawer-offset-pane {
   -fx-background-color: #00000000;
 }
 
-Button.drawer-button:hover, Button.drawer-button:focused, Button.drawer-button:selected {
-  -fx-background-color: #B5B5C0;
-}
-
 /*
  * Tab
  */
 
-
-.table-view {
+/* .table-view {
   -fx-background-color: #FFF;
 }
 
@@ -391,4 +397,4 @@ Button.drawer-button:hover, Button.drawer-button:focused, Button.drawer-button:s
 
 .table-view .table-cell {
   -fx-text-fill: #2D3447;
-}
+} */
