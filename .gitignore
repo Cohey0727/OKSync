@@ -6,3 +6,4 @@ build.fxbuild
 .project
 .classpath
 build/
+scenicView.properties
