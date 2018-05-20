@@ -1,18 +1,19 @@
 package application.form;
 
 import java.io.IOException;
-import java.lang.reflect.Field;
 import java.util.ArrayList;
+
+import org.scenicview.ScenicView;
 
 import application.common.AfterCloseAction;
 import application.controller.AbstractFormController;
 import application.controller.preference.content.ConnectionDialogController;
+import common.ini.config.ConfigManager;
 import common.system.SystemUtil;
 import common.system.SystemUtil.ResourceType;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.AcceleratableButton;
 import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -37,13 +38,15 @@ public abstract class FXMLForm implements Form {
             stage.getIcons().add(new Image(SystemUtil.getResourceURL(getIcon(), ResourceType.IMAGE).openStream()));
             stage.setTitle(getTitle());
             stage.setScene(scene);
-            //            ScenicView.show(scene);
             stage.initModality(Modality.WINDOW_MODAL);
             if (owner != null) {
                 stage.initOwner(owner.getScene().getWindow());
             }
             decolateScene(scene);
             decolateStage(stage);
+            if ("1".equals(ConfigManager.get("IS_DEBUG_MODE"))) {
+                ScenicView.show(scene);
+            }
             stage.showAndWait();
             afterColseActionList.forEach((action) -> {
                 action.run();
@@ -92,21 +95,5 @@ public abstract class FXMLForm implements Form {
 
     public final Stage getStage() {
         return stage;
-    }
-
-    public void getAcceleratable() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Class: " + this.getClass().getCanonicalName() + "\n");
-        sb.append("Settings:\n");
-        for (Field field : this.getClass().getDeclaredFields()) {
-            try {
-                field.setAccessible(true);
-                if (field.get(this) instanceof AcceleratableButton) {
-                    sb.append(field.getName() + " = " + field.get(this) + "\n");
-                }
-            } catch (Exception e) {
-                sb.append(field.getName() + " = " + "access denied\n");
-            }
-        }
     }
 }

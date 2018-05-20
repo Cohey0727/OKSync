@@ -58,7 +58,6 @@ public class SqlTab extends Tab {
         resultTableView.getSelectionModel().setCellSelectionEnabled(true);
         resultTableView.setPlaceholder(new Label("No Data"));
         resultTableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-        resultTableView.setColumnResizePolicy(param -> true);
         resultTableView.setOnKeyPressed((e) -> {
             switch (e.getCode()) {
             case END:
@@ -195,6 +194,9 @@ public class SqlTab extends Tab {
             case INSERT:
             case UPDATE:
             case DELETE:
+            case CREATE:
+            case DROP:
+            case TRUNCATE:
                 int count = con.createStatement().executeUpdate(sql);
                 ButtonType ok = new ButtonType("OK", ButtonData.OK_DONE);
                 ButtonType cancel = new ButtonType("CANCEL", ButtonData.CANCEL_CLOSE);
@@ -266,7 +268,7 @@ public class SqlTab extends Tab {
     }
 
     enum SqlType {
-        SELECT("SELECT"), UPDATE("UPDATE"), INSERT("INSERT"), DELETE("DELETE");
+        SELECT("SELECT"), UPDATE("UPDATE"), INSERT("INSERT"), DELETE("DELETE"), CREATE("CREATE"), TRUNCATE("TRUNCATE"), DROP("DROP");
         SqlType(String key) {
             this.key = key;
         }

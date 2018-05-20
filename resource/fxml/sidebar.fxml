@@ -15,70 +15,28 @@
                <children>
                   <Label layoutX="20.0" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="220.0" styleClass="drawer-label" text="Import" />
                   <Label layoutX="240.0" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="120.0" styleClass="drawer-label" text="Ctrl + I" />
-                  <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="360.0" styleClass="filter-label" />
+                  <Button fx:id="importButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="360.0" styleClass="filter-label" />
                </children>
             </Pane>
             <Pane prefHeight="40.0" prefWidth="360.0" styleClass="drawer-menu-button" stylesheets="@../css/application.css">
                <children>
                   <Label layoutX="20.0" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="220.0" styleClass="drawer-label" text="Open" />
                   <Label layoutX="240.0" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="120.0" styleClass="drawer-label" text="Ctrl + O" />
-                  <Label fx:id="openButton" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="360.0" styleClass="filter-label" />
+                  <Button fx:id="openButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="360.0" styleClass="filter-label" />
                </children>
             </Pane>
             <Pane prefHeight="40.0" prefWidth="360.0" styleClass="drawer-menu-button" stylesheets="@../css/application.css">
                <children>
                   <Label layoutX="20.0" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="220.0" styleClass="drawer-label" text="Save" />
                   <Label layoutX="240.0" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="120.0" styleClass="drawer-label" text="Ctrl + S" />
-                  <Label fx:id="saveButton" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="360.0" styleClass="filter-label" />
+                  <Button fx:id="saveButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="360.0" styleClass="filter-label" />
                </children>
             </Pane>
             <Pane prefHeight="40.0" prefWidth="360.0" styleClass="drawer-menu-button" stylesheets="@../css/application.css">
                <children>
                   <Label layoutX="20.0" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="220.0" styleClass="drawer-label" text="Preference" />
                   <Label layoutX="240.0" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="120.0" styleClass="drawer-label" text="F10" />
-                  <Label fx:id="preferenceButton" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="360.0" styleClass="filter-label" />
-               </children>
-            </Pane>
-            <Pane prefHeight="40.0" prefWidth="360.0" styleClass="drawer-menu-button" stylesheets="@../css/application.css">
-               <children>
-                  <Label layoutX="20.0" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="220.0" styleClass="drawer-label" text="Execute SQL" />
-                  <Label layoutX="240.0" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="120.0" styleClass="drawer-label" text="F7" />
-                  <Label maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="360.0" styleClass="filter-label" />
-               </children>
-            </Pane>
-            <Pane prefHeight="40.0" prefWidth="360.0" styleClass="drawer-menu-button" stylesheets="@../css/application.css">
-               <children>
-                  <Label layoutX="20.0" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="220.0" styleClass="drawer-label" text="Add WHERE... AND ? = ''" />
-                  <Label layoutX="240.0" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="120.0" styleClass="drawer-label" text="Ctrl + E" />
-                  <Label maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="360.0" styleClass="filter-label" />
-               </children>
-            </Pane>
-            <Pane prefHeight="40.0" prefWidth="360.0" styleClass="drawer-menu-button" stylesheets="@../css/application.css">
-               <children>
-                  <Label layoutX="20.0" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="220.0" styleClass="drawer-label" text="Add WHERE... OR ? = ''" />
-                  <Label layoutX="240.0" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="120.0" styleClass="drawer-label" text="Ctrl + Shift + E" />
-                  <Label maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="360.0" styleClass="filter-label" />
-               </children>
-            </Pane>
-            <Pane prefHeight="40.0" prefWidth="360.0" styleClass="drawer-menu-button" stylesheets="@../css/application.css">
-               <children>
-                  <Label layoutX="20.0" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="220.0" styleClass="drawer-label" text="Add WHERE... AND ? LIKE '%%'" />
-                  <Label layoutX="240.0" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="120.0" styleClass="drawer-label" text="Ctrl + L" />
-                  <Label maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="360.0" styleClass="filter-label" />
-               </children>
-            </Pane>
-            <Pane prefHeight="40.0" prefWidth="360.0" styleClass="drawer-menu-button" stylesheets="@../css/application.css">
-               <children>
-                  <Label layoutX="20.0" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="220.0" styleClass="drawer-label" text="Add WHERE... OR ? LIKE '%%'" />
-                  <Label layoutX="240.0" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="120.0" styleClass="drawer-label" text="Ctrl + Shift + L" />
-                  <Label maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="360.0" styleClass="filter-label" />
-               </children>
-            </Pane>
-            <Pane prefHeight="40.0" prefWidth="360.0" styleClass="drawer-menu-button" stylesheets="@../css/application.css">
-               <children>
-                  <Label layoutX="20.0" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="220.0" styleClass="drawer-label" text="Synchronize" />
-                  <Label layoutX="240.0" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="120.0" styleClass="drawer-label" text="F2" />
-                  <Label maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="360.0" styleClass="filter-label" />
+                  <Button fx:id="preferenceButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="360.0" styleClass="filter-label" />
                </children>
             </Pane>
          </children>

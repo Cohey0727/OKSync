@@ -50,33 +50,33 @@ public class MainController extends AbstractFormController {
     private static DBManager context = new DBManager();
 
     @FXML
-    private MenuItem importButton;
+    MenuItem importButton;
     @FXML
-    private MenuItem preferenceButton;
+    MenuItem preferenceButton;
     @FXML
-    private MenuItem saveButton;
+    MenuItem saveButton;
     @FXML
-    private MenuItem openButton;
+    MenuItem openButton;
     @FXML
-    private MenuItem closeButton;
+    MenuItem closeButton;
     @FXML
-    private CheckMenuItem displayEmptyTable;
+    CheckMenuItem displayEmptyTable;
     @FXML
-    private MenuItem executeSqlButton;
+    MenuItem executeSqlButton;
     @FXML
-    private MenuItem addAndEqualButton;
+    MenuItem addAndEqualButton;
     @FXML
-    private MenuItem addOrEqualButton;
+    MenuItem addOrEqualButton;
     @FXML
-    private MenuItem addAndLikeButton;
+    MenuItem addAndLikeButton;
     @FXML
-    private MenuItem addOrLikeButton;
+    MenuItem addOrLikeButton;
     @FXML
-    private MenuItem copyButton;
+    MenuItem copyButton;
     @FXML
     private MenuItem tabCloseButton;
     @FXML
-    private MenuItem aboutMeMenu;
+    MenuItem aboutMeMenu;
     @FXML
     private MenuItem leftAlignButton;
     @FXML
@@ -139,6 +139,8 @@ public class MainController extends AbstractFormController {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(SystemUtil.getResourceURL("sidebar.fxml", ResourceType.FXML));
             AnchorPane sideBar = (AnchorPane) fxmlLoader.load();
+            SidebarController controller = fxmlLoader.getController();
+            controller.setOwner(this);
             sideDrawer.setSidePane(sideBar);
         } catch (IOException e1) {
             e1.printStackTrace();
@@ -392,16 +394,7 @@ public class MainController extends AbstractFormController {
             form.show(getStage());
         });
         aboutMeMenu.setAccelerator(new KeyCodeCombination(KeyCode.F1));
-        //        rightAlignButton.setOnAction((e) -> {
-        //            AboutMeForm form = new AboutMeForm();
-        //            form.show(getStage());
-        //        });
-        //        rightAlignButton.setAccelerator(new KeyCodeCombination(KeyCode.Y, KeyCombination.CONTROL_DOWN));
-        //        leftAlignButton.setOnAction((e) -> {
-        //            AboutMeForm form = new AboutMeForm();
-        //            form.show(getStage());
-        //        });
-        //        leftAlignButton.setAccelerator(new KeyCodeCombination(KeyCode.COMMAND));
+
     }
 
     private void setTitle(String title) {

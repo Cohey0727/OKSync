@@ -5,12 +5,9 @@ import common.ini.version.VersionManager;
 import common.system.SystemUtil;
 import common.system.SystemUtil.ResourceType;
 import javafx.scene.Parent;
-import javafx.scene.control.AcceleratableButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyCodeCombination;
-import javafx.scene.input.KeyCombination;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -23,7 +20,6 @@ public class AboutMeForm extends JavaForm {
     private static final String ICON = "logo.jpg";
     private static final String[] CSS = { "application.css" };
     private static final LayoutSize size = new LayoutSize(620, 408);
-    AcceleratableButton button;
     private double offsetX = 0;
     private double offsetY = 0;
 
@@ -85,13 +81,6 @@ public class AboutMeForm extends JavaForm {
         version.setLayoutY(400.0);
         version.setWrappingWidth(184);
         pane.getChildren().add(version);
-        button = new AcceleratableButton("AAA");
-        button.setOnAction((e) -> {
-            System.out.println("AAA");
-        });
-        button.setAccelerator(new KeyCodeCombination(KeyCode.S, KeyCombination.CONTROL_DOWN));
-        pane.getChildren().add(button);
-
         Text closeText = new Text();
         closeText.setText("Press F1 or ESC to close");
         closeText.setFill(Color.valueOf("#495164"));
@@ -104,7 +93,6 @@ public class AboutMeForm extends JavaForm {
             offsetX = event.getSceneX();
             offsetY = event.getSceneY();
         });
-        //マウス・ボタンがドラッグされるとき
         pane.setOnMouseDragged(event -> {
             getStage().setX(event.getScreenX() - offsetX);
             getStage().setY(event.getScreenY() - offsetY);

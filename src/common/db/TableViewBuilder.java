@@ -27,7 +27,8 @@ public class TableViewBuilder {
             //We are using non property style for making dynamic table
             col = new TableColumn<ObservableList<String>, String>(rs.getMetaData().getColumnName(i + 1));
             col.setCellValueFactory(new SetCellProperty(i));
-            col.setMinWidth(120);
+            col.setMinWidth(144);
+            col.setResizable(true);
             columns.add(col);
         }
 

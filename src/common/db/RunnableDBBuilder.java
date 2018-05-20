@@ -89,9 +89,10 @@ public class RunnableDBBuilder implements Runnable {
             con.createStatement().execute(getCreateTableSQL(tableName, headers));
             con.commit();
         } catch (SQLException e) {
-            if (e.getErrorCode() != 5) {
-                throw e;
+            if (e.getErrorCode() == 5) {
+                throw new AlreadyExistsExeption(tableName);
             }
+            throw e;
         }
     }
 

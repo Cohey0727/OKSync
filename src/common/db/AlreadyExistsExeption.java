@@ -1,8 +1,8 @@
 package common.db;
 
 public class AlreadyExistsExeption extends Exception {
-    public AlreadyExistsExeption() {
-        super("Already Exists Exeption");
+    public AlreadyExistsExeption(String table) {
+        super("Already Exists Exeption. Tbale name : " + table);
     }
 
 }

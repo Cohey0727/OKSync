@@ -7,6 +7,7 @@ import org.scenicview.ScenicView;
 
 import application.common.AfterCloseAction;
 import application.common.LayoutSize;
+import common.ini.config.ConfigManager;
 import common.system.SystemUtil;
 import common.system.SystemUtil.ResourceType;
 import javafx.scene.Parent;
@@ -48,7 +49,9 @@ public abstract class JavaForm implements Form {
                 stage.initOwner(owner.getScene().getWindow());
             }
             decolateStage();
-            ScenicView.show(scene);
+            if ("1".equals(ConfigManager.get("IS_DEBUG_MODE"))) {
+                ScenicView.show(scene);
+            }
             stage.showAndWait();
             afterColseActionList.forEach((action) -> {
                 action.run();
