@@ -1,15 +1,11 @@
 package application.form;
 
-import java.io.IOException;
-
 import application.common.LayoutSize;
-import application.component.java.AcceleratableButton;
 import common.ini.version.VersionManager;
 import common.system.SystemUtil;
 import common.system.SystemUtil.ResourceType;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
+import javafx.scene.control.AcceleratableButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -27,7 +23,7 @@ public class AboutMeForm extends JavaForm {
     private static final String ICON = "logo.jpg";
     private static final String[] CSS = { "application.css" };
     private static final LayoutSize size = new LayoutSize(620, 408);
-    Button button;
+    AcceleratableButton button;
     private double offsetX = 0;
     private double offsetY = 0;
 
@@ -89,13 +85,12 @@ public class AboutMeForm extends JavaForm {
         version.setLayoutY(400.0);
         version.setWrappingWidth(184);
         pane.getChildren().add(version);
-        AcceleratableButton aButton = new AcceleratableButton("VVV");
-        button = new Button("AAA");
+        button = new AcceleratableButton("AAA");
         button.setOnAction((e) -> {
             System.out.println("AAA");
         });
+        button.setAccelerator(new KeyCodeCombination(KeyCode.S, KeyCombination.CONTROL_DOWN));
         pane.getChildren().add(button);
-        pane.getChildren().add(aButton);
 
         Text closeText = new Text();
         closeText.setText("Press F1 or ESC to close");
@@ -115,15 +110,6 @@ public class AboutMeForm extends JavaForm {
             getStage().setY(event.getScreenY() - offsetY);
         });
         return pane;
-    }
-
-    @Override
-    public Scene load() throws IOException {
-        Scene scene = new Scene(getParent());
-        scene.getAccelerators().put(new KeyCodeCombination(KeyCode.S, KeyCombination.SHORTCUT_DOWN), () -> {
-            button.fire();
-        });
-        return scene;
     }
 
 }

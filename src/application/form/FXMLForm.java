@@ -5,7 +5,6 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 import application.common.AfterCloseAction;
-import application.component.java.AcceleratableButton;
 import application.controller.AbstractFormController;
 import application.controller.preference.content.ConnectionDialogController;
 import common.system.SystemUtil;
@@ -13,6 +12,7 @@ import common.system.SystemUtil.ResourceType;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.AcceleratableButton;
 import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
