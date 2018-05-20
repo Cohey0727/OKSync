@@ -1,11 +1,11 @@
 package application.form;
 
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 
-import org.scenicview.ScenicView;
-
 import application.common.AfterCloseAction;
+import application.component.java.AcceleratableButton;
 import application.controller.AbstractFormController;
 import application.controller.preference.content.ConnectionDialogController;
 import common.system.SystemUtil;
@@ -32,18 +32,18 @@ public abstract class FXMLForm implements Form {
     @Override
     public void show(Stage owner) {
         try {
-            Parent root = load();
-            Scene scene = new Scene(root);
+            Scene scene = load();
             setCSS(scene);
             stage.getIcons().add(new Image(SystemUtil.getResourceURL(getIcon(), ResourceType.IMAGE).openStream()));
             stage.setTitle(getTitle());
             stage.setScene(scene);
-            ScenicView.show(scene);
+            //            ScenicView.show(scene);
             stage.initModality(Modality.WINDOW_MODAL);
             if (owner != null) {
                 stage.initOwner(owner.getScene().getWindow());
             }
-            decolateStage();
+            decolateScene(scene);
+            decolateStage(stage);
             stage.showAndWait();
             afterColseActionList.forEach((action) -> {
                 action.run();
@@ -53,9 +53,13 @@ public abstract class FXMLForm implements Form {
         }
     };
 
-    protected void decolateStage() {
+    private void decolateScene(Scene scene) {
 
     }
+    protected void decolateStage(Stage stage) {
+
+    }
+
     private void setCSS(Scene scene) {
         if (getCss() != null) {
             for (String css : getCss()) {
@@ -65,12 +69,13 @@ public abstract class FXMLForm implements Form {
     }
 
     @Override
-    public Parent load() throws IOException {
+    public Scene load() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(SystemUtil.getResourceURL(getFxml(), ResourceType.FXML));
         Parent root = (Parent) fxmlLoader.load();
         AbstractFormController controller = fxmlLoader.getController();
         controller.setForm(this);
-        return root;
+        Scene scene = new Scene(root);
+        return scene;
     }
 
     public void addAfterCloseAction(AfterCloseAction action) {
@@ -89,4 +94,19 @@ public abstract class FXMLForm implements Form {
         return stage;
     }
 
+    public void getAcceleratable() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Class: " + this.getClass().getCanonicalName() + "\n");
+        sb.append("Settings:\n");
+        for (Field field : this.getClass().getDeclaredFields()) {
+            try {
+                field.setAccessible(true);
+                if (field.get(this) instanceof AcceleratableButton) {
+                    sb.append(field.getName() + " = " + field.get(this) + "\n");
+                }
+            } catch (Exception e) {
+                sb.append(field.getName() + " = " + "access denied\n");
+            }
+        }
+    }
 }

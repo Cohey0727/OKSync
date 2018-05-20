@@ -3,6 +3,8 @@ package application.form;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import org.scenicview.ScenicView;
+
 import application.common.AfterCloseAction;
 import application.common.LayoutSize;
 import common.system.SystemUtil;
@@ -26,15 +28,15 @@ public abstract class JavaForm implements Form {
     protected abstract LayoutSize getLayoutSize();
 
     @Override
-    public Parent load() throws IOException {
-        return getParent();
+    public Scene load() throws IOException {
+        Scene scene = new Scene(getParent());
+        return scene;
     }
 
     @Override
     public void show(Stage owner) {
         try {
-            Parent root = load();
-            Scene scene = new Scene(root);
+            Scene scene = load();
             setCSS(scene);
             stage.setScene(scene);
             stage.getIcons().add(new Image(SystemUtil.getResourceURL(getIcon(), ResourceType.IMAGE).openStream()));
@@ -46,6 +48,7 @@ public abstract class JavaForm implements Form {
                 stage.initOwner(owner.getScene().getWindow());
             }
             decolateStage();
+            ScenicView.show(scene);
             stage.showAndWait();
             afterColseActionList.forEach((action) -> {
                 action.run();

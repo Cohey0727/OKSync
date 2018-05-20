@@ -344,13 +344,13 @@ Button:hover {
   -fx-border-width: 0 0 0 0;
 }
 
-.filetr-label {
+.filter-label {
   -fx-background-color: #00000000;
   -fx-pref-height: 40;
   -fx-cursor: hand;
 }
 
-.filetr-label:hover {
+.filter-label:hover {
   -fx-background-color: #B5B5C048;
 }
 
@@ -371,6 +371,25 @@ Button:hover {
 }
 
 /*
+ * about me
+ */
+
+.acceleratable-label {
+  -fx-pref-height: 200;
+  -fx-pref-width: 200;
+}
+
+.acceleratable-label .text {
+  -fx-pref-height: 200;
+  -fx-pref-width: 200;
+}
+
+.acceleratable-button {
+  -fx-pref-height: 200;
+  -fx-pref-width: 200;
+}
+
+/*s
  * Tab
  */
 
