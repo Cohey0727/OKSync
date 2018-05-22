@@ -1,7 +1,7 @@
 package application.form.preference.content;
 
 import application.common.LayoutSize;
-import application.component.java.ConnectionDialog;
+import application.control.ConnectionDialog;
 import application.form.JavaForm;
 import javafx.scene.Parent;
 

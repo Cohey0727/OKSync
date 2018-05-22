@@ -9,7 +9,7 @@ import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXHamburger;
 import com.jfoenix.transitions.hamburger.HamburgerSlideCloseTransition;
 
-import application.component.java.SqlTab;
+import application.control.SqlTab;
 import application.form.AboutMeForm;
 import application.form.PreferenceForm;
 import application.form.SyncForm;

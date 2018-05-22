@@ -1,9 +1,15 @@
 package application.controller;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import application.control.AcceleratableButton;
+import application.form.AboutMeForm;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 
-public class SidebarController {
+public class SidebarController implements Initializable {
 
     @FXML
     private Button importButton;
@@ -13,6 +19,8 @@ public class SidebarController {
     private Button saveButton;
     @FXML
     private Button preferenceButton;
+    @FXML
+    private AcceleratableButton testBtutton;
 
     public void setOwner(MainController mainController) {
         importButton.setOnAction((e) -> {
@@ -29,4 +37,11 @@ public class SidebarController {
         });
     }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        testBtutton.setOnAction((e) -> {
+            AboutMeForm form = new AboutMeForm();
+            form.show();
+        });
+    }
 }

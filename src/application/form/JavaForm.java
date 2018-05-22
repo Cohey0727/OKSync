@@ -34,6 +34,10 @@ public abstract class JavaForm implements Form {
         return scene;
     }
 
+    public void show() {
+        this.show(null);
+    }
+
     @Override
     public void show(Stage owner) {
         try {

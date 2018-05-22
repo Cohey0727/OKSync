@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import application.component.java.PreferenceListCell;
+import application.control.PreferenceListCell;
 import application.controller.preference.PreferenceContentController;
 import common.ini.preference.Preference;
 import common.ini.preference.PreferenceDao;

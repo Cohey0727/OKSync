@@ -1,4 +1,4 @@
-package application.component.java;
+package application.control;
 
 import java.sql.Connection;
 import java.sql.SQLException;

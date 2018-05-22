@@ -3,7 +3,7 @@ package application.controller.preference.content;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import application.component.java.ConnectionDialog;
+import application.control.ConnectionDialog;
 import application.controller.AbstractFormController;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;

@@ -385,8 +385,6 @@ Button:hover {
 }
 
 .acceleratable-button {
-  -fx-pref-height: 200;
-  -fx-pref-width: 200;
 }
 
 /*s
