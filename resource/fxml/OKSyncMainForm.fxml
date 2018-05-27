@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import application.control.ToggleIcon?>
 <?import com.jfoenix.controls.JFXDrawer?>
 <?import com.jfoenix.controls.JFXHamburger?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckMenuItem?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
@@ -15,6 +17,8 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
@@ -94,6 +98,20 @@
          <children>
             <JFXDrawer id="side-drawer" fx:id="sideDrawer" defaultDrawerSize="360.0" prefHeight="289.0" prefWidth="48.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
             <JFXHamburger fx:id="sideBarHambuger" layoutX="17.0" layoutY="9.0" prefHeight="39.0" prefWidth="30.0" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="64.0">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/Camera.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <ToggleIcon prefHeight="44.0" prefWidth="64.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="128.0">
+               <fromImage>
+                  <Image url="@../img/Cloud.png" />
+               </fromImage>
+            </ToggleIcon>
          </children></AnchorPane>
    </children>
 </AnchorPane>
