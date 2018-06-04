@@ -10,6 +10,7 @@ import com.jfoenix.controls.JFXHamburger;
 import com.jfoenix.transitions.hamburger.HamburgerSlideCloseTransition;
 
 import application.control.SqlTab;
+import application.control.ToggleIcon;
 import application.form.AboutMeForm;
 import application.form.PreferenceForm;
 import application.form.SyncForm;
@@ -95,6 +96,8 @@ public class MainController extends AbstractFormController {
     @FXML
     private JFXHamburger sideBarHambuger;
     @FXML
+    private ToggleIcon toggleIcon;
+    @FXML
     private JFXDrawer sideDrawer;
 
     @FXML
@@ -156,6 +159,16 @@ public class MainController extends AbstractFormController {
             } else {
                 sideDrawer.open();
             }
+        });
+        toggleIcon.setOnObverseAction(() -> {
+            task.setRate(task.getRate() * -1);
+            task.play();
+            sideDrawer.close();
+        });
+        toggleIcon.setOnReverseAction(() -> {
+            task.setRate(task.getRate() * -1);
+            task.play();
+            sideDrawer.open();
         });
     }
 
